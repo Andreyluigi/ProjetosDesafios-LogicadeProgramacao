@@ -7,8 +7,11 @@ function adicionar(){
     let valorUnitario = produto.split('R$')[1];
     let quantidade = document.getElementById('quantidade').value;
     let preco = quantidade * valorUnitario;
-
     let carrinho = document.getElementById('lista-produtos');
+    if (quantidade<=0){
+        alert("Voce deve inserir uma quantidade valida!")
+        return
+    }
     carrinho.innerHTML = carrinho.innerHTML + ` <section class="carrinho__produtos__produto">
           <span class="texto-azul">${quantidade}x </span>${nomeProduto}<span class="texto-azul">R$${valorUnitario}</span>
         </section>`
@@ -17,7 +20,7 @@ function adicionar(){
     let valorTotal = document.getElementById('valor-total');
     valorTotal.textContent = `R$ ${total}`
     
-    console.log(produto, quantidade, nomeProduto, valorUnitario)
+    
 }
 
 function limpar(){
