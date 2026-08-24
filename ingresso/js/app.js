@@ -23,3 +23,23 @@ function comprarPista(qtd) {
         alert('Compra realizada com sucesso!');
     }
 }
+function comprarInferior(qtd){
+    let qtdinferior = parseInt(document.getElementById('qtd-inferior').textContent);
+    if (qtd > qtdinferior){
+        alert('Quantidade indisponível para tipo Inferior!!');
+    }else{
+        qtdinferior = qtdinferior - qtd;
+        document.getElementById('qtd-inferior').textContent = qtdinferior;
+        alert('Compra realizada com sucesso!')
+    }
+}
+function comprarSuperior(qtd){
+    let qtdsuperior = parseInt(document.getElementById('qtd-superior').textContent)
+        if (qtd > qtdsuperior) {
+        alert('Quantidade indisponível para tipo Superior!');
+        }else{
+            qtdsuperior = qtdsuperior - qtd
+            document.getElementById('qtd-superior').textContent = qtdsuperior;
+            alert('compra realizada com sucesso')
+        }
+    }
